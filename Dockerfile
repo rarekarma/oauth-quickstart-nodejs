@@ -10,7 +10,7 @@ RUN npm install
 ENV CLIENT_ID="98b54744-f71a-4f1a-b4aa-72e55ada7f80"
 ENV CLIENT_SECRET="f92c11f3-bcfd-4721-aeab-d1201c96a64d"
 ENV SCOPE="contacts"
-ENV PORT = $PORT
-EXPOSE PORT
+
+EXPOSE 8080
 
 ENTRYPOINT [ "node", "index.js" ]
