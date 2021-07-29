@@ -6,7 +6,7 @@ const session = require('express-session');
 const opn = require('open');
 const app = express();
 
-const PORT = 3000;
+const PORT = 8080;
 
 const refreshTokenStore = {};
 const accessTokenCache = new NodeCache({ deleteOnExpire: true });
@@ -36,7 +36,7 @@ if (process.env.SCOPE) {
 }
 
 // On successful install, users will be redirected to /oauth-callback
-const REDIRECT_URI = `http://localhost:${PORT}/oauth-callback`;
+const REDIRECT_URI = `https://mipi-test1-kgluoegckq-uc.a.run.app:${PORT}/oauth-callback`;
 
 //===========================================================================//
 
@@ -215,5 +215,4 @@ app.get('/error', (req, res) => {
   res.end();
 });
 
-app.listen(PORT, () => console.log(`=== Starting your app on http://localhost:${PORT} ===`));
-opn(`http://localhost:${PORT}`);
+app.listen(PORT, () => console.log(`=== Starting your app on https://mipi-test1-kgluoegckq-uc.a.run.app:${PORT} ===`));
